@@ -1,0 +1,20 @@
+.img-look{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.datamapping-text {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.submited-text{
+     display: flex;
+     flex-flow: column wrap;
+     justify-content: center;
+     align-items: center;
+}
+.add-zone-title{
+    color:#3c9040;
+}
