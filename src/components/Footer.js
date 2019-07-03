@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBIcon } from "mdbreact";
 
 const Footer = () => {
   return (
@@ -7,11 +7,9 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6">
-            <h5 className="title">Footer Content</h5>
-            <p>
-              Here you can use rows and columns here to organize your footer
-              content.
-            </p>
+            <h4 className="h4-responsive font-weight-bold">
+              Africadronevalley
+            </h4>
           </MDBCol>
           <MDBCol md="6">
             <h5 className="title">Links</h5>
@@ -33,9 +31,11 @@ const Footer = () => {
         </MDBRow>
       </MDBContainer>
       <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
+        <MDBIcon fab icon="facebook" size="3x" className="mx-1"/>
+        <MDBIcon fab icon="twitter" size="3x" className="mx-1"/>
+        <MDBContainer>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href=" "> Africa Drone Valley</a>
+          <a href="/"> Africa Drone Valley</a>
         </MDBContainer>
       </div>
     </MDBFooter>

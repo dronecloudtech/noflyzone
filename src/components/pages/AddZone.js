@@ -16,13 +16,13 @@ export default function AddZone() {
             labore dolore ea ipsum do. Minim velit consequat excepteur officia
             in qui nostrud id labore elit sint. Laborum Lorem culpa commodo
             excepteur sit dolor consectetur nulla dolor. Dolor aute tempor
-            reprehenderit minim qui. Aute sit et officia officia pariatur ipsum
-            ea. Est quis minim eu tempor id ullamco. Minim aliqua consectetur
-            esse sunt adipisicing occaecat mollit labore dolore ea ipsum do.
-            Minim velit consequat excepteur officia in qui nostrud id labore
-            elit sint. Laborum Lorem culpa commodo excepteur sit dolor
-            consectetur nulla dolor. Dolor aute tempor reprehenderit minim qui.
-            Aute sit et officia officia pariatur ipsum ea.
+            reprehenderit minim qui. Aute sit et officia officia pariatur
+            ipsum ea. Est quis minim eu tempor id ullamco. Minim aliqua
+            consectetur esse sunt adipisicing occaecat mollit labore dolore ea
+            ipsum do. Minim velit consequat excepteur officia in qui nostrud
+            id labore elit sint. Laborum Lorem culpa commodo excepteur sit
+            dolor consectetur nulla dolor. Dolor aute tempor reprehenderit
+            minim qui. Aute sit et officia officia pariatur ipsum ea.
           </p>
         </MDBCol>
       </MDBRow>
@@ -63,12 +63,12 @@ export default function AddZone() {
         <MDBCol md="8 mt-4" className="submited-text">
           <p className="text-justify">
             The simplest and quickest method is to provide us with a{" "}
-            <code>.kml</code> file containing the flat polygon for your "no fly
-            zone". Alternatively, with a longer lead time, we can also accept a
-            series of Latitude and Longitude points (decimal degrees), a screen
-            shot of the area, a scanned in marked up map or just a general
-            description. If you'd like a circular zone then please advise the
-            radius. If we have any queries, Please{" "}
+            <code>.kml</code> file containing the flat polygon for your "no
+            fly zone". Alternatively, with a longer lead time, we can also
+            accept a series of Latitude and Longitude points (decimal
+            degrees), a screen shot of the area, a scanned in marked up map or
+            just a general description. If you'd like a circular zone then
+            please advise the radius. If we have any queries, Please{" "}
             <Link to="/contact" className="font-weight-bold green-text">
               Contact us
             </Link>
@@ -85,6 +85,15 @@ export default function AddZone() {
           <span className="h2-responsive text-center add-zone-title font-weight-bold">
             Fill this form below to add your nofly zone
           </span>
+          <p className="text-center">
+            Upload your No Fly Zone and once it’s live we'll send you a
+            confirmation email.
+          </p>
+          <p className="text-center">
+            Note: Please allow up to 10 working days before contacting us.
+            You may also use the form below if you would like to request a no
+            fly zone to be removed.
+          </p>
         </MDBCol>
       </MDBRow>
       <MDBRow>

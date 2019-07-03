@@ -25,7 +25,7 @@ export default function Contact() {
             Official sources of information about rules and airspace are
             obtained from the <Link to="" />
             <a
-              href="http://www.anac.ci/anac/web/"
+              href="http://www.anac.ci/anac/web/Securite/afficher"
               className="green-text"
               target="_blank"
               rel="noopener noreferrer"
