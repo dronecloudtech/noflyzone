@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
+import Contact from "../pages/Contact";
 import AddZone from "../pages/AddZone";
 
 import Menu from "../Menu";
@@ -13,6 +14,7 @@ export default function AllRoutes() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/add zone" component={AddZone} />
+          <Route path="/contact" component={Contact} />
         </Switch>
         <Footer />
       </div>
