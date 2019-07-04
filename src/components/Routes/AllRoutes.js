@@ -13,7 +13,7 @@ export default function AllRoutes() {
         <Menu items={["EXPLORE", "CONTACT", "ADD ZONE"]} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/add zone" component={AddZone} />
+          <Route path="/addzone" component={AddZone} />
           <Route path="/contact" component={Contact} />
         </Switch>
         <Footer />

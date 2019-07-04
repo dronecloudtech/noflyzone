@@ -28,7 +28,7 @@ export default function Menu(props) {
             {props.items.map((w, key) => (
               <NavItem key={key}>
                 <NavLink
-                  href={`/${w}`.toLowerCase().trim()}
+                  href={`/${w}`.replace(" ", '').toLowerCase().trim()}
                   className="font-weight-bold"
                 >
                   {w}

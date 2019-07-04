@@ -1,6 +1,8 @@
 import React from "react";
 import { MDBContainer, MDBCol, MDBRow, MDBBtn } from "mdbreact";
-import * as emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import firebase from 'firebase'
 export default class FormRegister extends React.Component {
   constructor(props) {
     super(props);
@@ -10,11 +12,25 @@ export default class FormRegister extends React.Component {
       phone: "",
       address: "",
       noflyzone_name: "",
-      noflyzone_coordinates: ""
+      noflyzone_coordinates: "",
+      e:""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleResetForm = this.handleResetForm.bind(this);
+  }
+
+  componentWillMount(){
+    const firebaseConfig = {
+      apiKey: "AIzaSyCw0K7CpmWmbCOj0IEyHZQ3BFnxm3IX6kM",
+      authDomain: "africadronevalley-34982.firebaseapp.com",
+      databaseURL: "https://africadronevalley-34982.firebaseio.com",
+      projectId: "africadronevalley-34982",
+      storageBucket: "",
+      messagingSenderId: "953805615933",
+      appId: "1:953805615933:web:99337c7f7077ee76"
+    };
+    firebase.initializeApp(firebaseConfig);
   }
 
   handleChange(e) {
@@ -34,27 +50,64 @@ export default class FormRegister extends React.Component {
     });
   }
 
+  notify = () => {
+    toast.success("Data was submitted with success", {
+      position: "top-right",
+      autoClose: "5000",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true
+    });
+  };
+
+  notifyFailed = () => {
+    toast.warning(`"Data was not submitted"`, {
+      position: "top-right",
+      autoClose: "5000",
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true
+    });
+  };
+
+  async handleSendData(){
+    try {
+      const dat = await firebase.database().ref(`users/${this.state.name}`).push({
+      Name:this.state.name,
+      Email:this.state.email,
+      Phone:this.state.phone,
+      Address:this.state.address,
+      Nofly_Zone_Name:this.state.noflyzone_name,
+      Nofly_Zone_Coords:this.state.noflyzone_coordinates
+    })
+    } catch (error) {
+      this.setState({e:error})
+    }
+    
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "gmail",
-        "template_DmATDRwx",
-        this.state.name
-      )
-      .then(
-        response => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        err => {
-          console.log("FAILED...", err);
-        }
-      );
+    this.handleSendData() == true ? this.notify() : this.notifyFailed();
+    this.handleResetForm();
   }
 
   render() {
     return (
       <MDBContainer>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
         <MDBRow>
           <MDBCol md="8" className="mt-5">
             <form onSubmit={this.handleSubmit} id="myform">
