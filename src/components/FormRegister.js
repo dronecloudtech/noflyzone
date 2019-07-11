@@ -74,7 +74,7 @@ export default class FormRegister extends React.Component {
 
   async handleSendData(){
     try {
-      const dat = await firebase.database().ref(`users/${this.state.name}`).push({
+      await firebase.database().ref(`users/${this.state.name}`).push({
       Name:this.state.name,
       Email:this.state.email,
       Phone:this.state.phone,
